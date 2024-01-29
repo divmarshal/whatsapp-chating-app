@@ -2,16 +2,22 @@ import React from "react";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./components/Root";
+import PrivateRoutes from "./components/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <PrivateRoutes />,
+    children: [
+      {
+        path: "/home",
+        element: <Home />,
+      },
+    ],
   },
   {
-    path: "/home",
-    element: <Home />,
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
