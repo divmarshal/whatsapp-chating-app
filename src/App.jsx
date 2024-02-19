@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PrivateRoutes from "./components/PrivateRoutes";
 import { AuthContextProvider } from "./context/AuthContext";
+import Root from "./components/Root";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +12,8 @@ const router = createBrowserRouter([
     element: <PrivateRoutes />,
     children: [
       {
-        path: "/home",
-        element: <Home />,
+        path: "/",
+        element: <Root />,
       },
     ],
   },

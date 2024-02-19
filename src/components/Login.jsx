@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    user && navigate("/home");
+    // user && navigate("/home");
     setTimeout(() => {
       setError(false);
     }, 4000);
