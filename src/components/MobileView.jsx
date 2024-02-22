@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoIosLogOut, IoIosSearch } from "react-icons/io";
 import { chatMenu as features } from "../constants";
+import User from "./User";
 
 const MobileView = () => {
   const [isActive, setIsActive] = useState("Chats");
@@ -31,15 +32,11 @@ const MobileView = () => {
           ))}
         </div>
       </div>
-      <div className={`px-4`}>bottom</div>
+      <div className="">
+        <User />
+      </div>
     </div>
   );
 };
 
 export default MobileView;
-
-{
-  /* <span className="text-xl text-white">Chats</span>
-<span className="text-xl text-white">Contants</span>
-<span className="text-xl text-white">Groups</span> */
-}
