@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { IoIosLogOut, IoIosSearch } from "react-icons/io";
 import { chatMenu as features } from "../constants";
-import User from "./User";
+import { useNavigate } from "react-router-dom";
+import Chats from "./Chats";
 
 const MobileView = () => {
   const [isActive, setIsActive] = useState("Chats");
-  const handleActiveFeature = (feature) => setIsActive(feature.name);
+  const navigate = useNavigate();
+  const handleActiveFeature = (feature) => {
+    setIsActive(feature.name);
+    navigate(`/chats/${feature.name}`);
+  };
 
   return (
-    <div className="">
+    <div className="md:hidden">
       <div className="shadow-md bg-primary">
         <div className="flex justify-between p-5">
           <span className="text-2xl text-white">WhatsApp</span>
@@ -22,7 +27,7 @@ const MobileView = () => {
             <span
               className={`px-4 pb-4 text-xl text-gray-200  cursor-pointer hover:text-white ${
                 isActive === feature.name &&
-                "text-[#fff] border-b-2 border-white"
+                "text-white border-b-2 border-white"
               }`}
               key={feature.id}
               onClick={() => handleActiveFeature(feature)}
@@ -33,7 +38,7 @@ const MobileView = () => {
         </div>
       </div>
       <div className="">
-        <User />
+        <Chats />
       </div>
     </div>
   );

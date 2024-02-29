@@ -12,6 +12,7 @@ export default {
         primary: "#008069",
         secondary: "#E1FFD8",
         textGray: "#757575",
+        textGreen: "#25D366",
       },
     },
   },

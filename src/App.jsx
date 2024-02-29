@@ -1,10 +1,10 @@
 import React from "react";
 import Login from "./components/Login";
-import Home from "./components/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PrivateRoutes from "./components/PrivateRoutes";
 import { AuthContextProvider } from "./context/AuthContext";
 import Root from "./components/Root";
+import ChatRoom from "./components/ChatRoom";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Root />,
+      },
+      {
+        path: "/Chats/:feed",
+        element: <Root />,
+      },
+      {
+        path: "/Chatroom",
+        element: <ChatRoom />,
       },
     ],
   },

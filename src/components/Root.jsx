@@ -1,29 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import Home from "./Home";
 import MobileView from "./MobileView";
 
 const Root = () => {
-  const [isMobileView, setIsMobileView] = useState(false);
-
-  window.addEventListener("resize", (e) => {
-    const width = window.innerWidth;
-    setIsMobileView(width < 768);
-  });
-
   return (
     <>
-      {isMobileView ? (
-        <MobileView />
-      ) : (
-        <>
-          {" "}
-          <div className="bg-primary h-[20vh]"></div>
-          <div className="bg-gray-50 h-[80vh]"></div>
-          <Home />
-        </>
-      )}
+      <div className="bg-primary h-[20vh] hidden md:block"></div>
+      <div className="bg-gray-50 h-[80vh] hidden md:block"></div>
+      <Home />
+      <MobileView />
     </>
   );
 };
 
 export default Root;
+
+// const [isMobileView, setIsMobileView] = useState(false);
+
+// window.addEventListener("resize", (e) => {
+//   const width = window.innerWidth;
+//   setIsMobileView(width < 768);
+// });
