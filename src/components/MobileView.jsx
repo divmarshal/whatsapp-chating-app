@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoIosLogOut, IoIosSearch } from "react-icons/io";
 import { chatMenu as features } from "../constants";
 import { useNavigate } from "react-router-dom";
-import Chats from "./Chats";
+import Users from "./Users";
 
 const MobileView = () => {
   const [isActive, setIsActive] = useState("Chats");
@@ -38,7 +38,7 @@ const MobileView = () => {
         </div>
       </div>
       <div className="">
-        <Chats />
+        <Users />
       </div>
     </div>
   );
